@@ -321,7 +321,7 @@ const swaggerDocument = {
                 properties: {
                   sourceId: {
                     type: "string",
-                    description: "The unique ID of the Condition in the source EHR system (optional)",
+                    description: "The unique ID of the Condition in the source EHR system",
                     example: "123",
                   },
                   sourceSystem: { type: "string", example: "localhost:8103" },
@@ -353,6 +353,7 @@ const swaggerDocument = {
                   asserter_id: { type: "string", example: "PR-50" },
                   note: { type: "string", example: "Patient condition worsened over the last week." },
                 },
+                required: ["sourceId", "patient_id", "category", "icd10_code"],
               },
             },
           },
@@ -759,6 +760,10 @@ const swaggerDocument = {
                   encounter_id: { type: "string", example: "enc-456" },
                   period_start: { type: "string", example: "2026-09-01T10:00:00Z" },
                   period_end: { type: "string", example: "2026-09-10T10:00:00Z" },
+                  role_code: { type: "string", example: "453231000124104" },
+                  role_display_name: { type: "string", example: "Primary care provider" },
+                  member_reference_id: { type: "string", example: "123" },
+                  member_display_name: { type: "string", example: "Amy V. Shaw" },
                 },
               },
             },
